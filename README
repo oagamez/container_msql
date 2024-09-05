@@ -1,0 +1,12 @@
+# Usa la imagen oficial de Microsoft SQL Server como base
+FROM mcr.microsoft.com/mssql/server:2022-latest
+
+# Establece las variables de entorno necesarias para MSSQL
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Cloud202402
+
+# Exponer el puerto por defecto para MSSQL
+EXPOSE 1433
+
+# El contenedor inicia el servicio de MSSQL
+CMD ["/opt/mssql/bin/sqlservr"]
